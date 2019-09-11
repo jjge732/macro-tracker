@@ -1,7 +1,5 @@
 const router = require('express').Router();
 
-// use the below format
-
 const userRoutes = require('./users');
 const foodRoutes = require('./foods');
 const mealRoutes = require('./meals');
