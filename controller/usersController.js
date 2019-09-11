@@ -3,9 +3,9 @@ const db = require('../models');
 module.exports = {
     getUser: (req, res) => {
         db.User
-            .find(req.params)
+            .find({user: req.params.user})
             .then(dbUser => {res.json(dbUser)})
-            .catch(err => res.status(422).json(err));
+            .catch(err => {res.status(422).json(err)});
     },
     getAllUsers: (req, res) => {
         db.User

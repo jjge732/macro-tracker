@@ -1,15 +1,16 @@
 const router = require('express').Router();
-const foodsController = require('../../controller/foodsController');
+const mealsController = require('../../controller/mealsController');
 
-// router.route('/')
-//     .post(foodsController.postFood);
+router.route('/')
+    .post(mealsController.postMeal);
 
-// router.route('/all')
-//     .get(foodsController.getAllFoods);
+router.route("/:mealId")
+    .get(mealsController.getFoodsInMeal);
 
-// router.route('/:food')
-//     .get(foodsController.getFood)
-//     .put(foodsController.putFood)
-//     .delete(foodsController.deleteFood);
+router.route("/user/:user")
+    .get(mealsController.getUserWithMeals);
+
+router.route('/all')
+    .get(mealsController.getAllMeals);
 
 module.exports = router;
