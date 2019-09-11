@@ -16,6 +16,17 @@ module.exports = {
             .then(dbMeal => {res.json(dbMeal)})
             .catch(err => {res.status(422).json(err)});
     },
+    updateMeal: (req, res) => {
+        db.Meal
+            .updateOne({_id: req.body.MealId},
+                {
+                   $push: {
+                       foods: req.body.foodId
+                   }
+                })
+            .then(dbFood => {res.json(dbFood)})
+            .catch(err => {res.status(422).json(err)});
+    },
     postMeal: (req, res) => {
         db.Meal
             .create({

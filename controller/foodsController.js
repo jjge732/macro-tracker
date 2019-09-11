@@ -10,7 +10,7 @@ module.exports = {
     },
     getFoodById: (req, res) => {
         db.Food
-            .find({_id: req.body.foodId})
+            .find({_id: req.body.foodId || req.params.foodId})
             .then(dbFood => {res.json(dbFood)})
             .catch(err => {res.status(422).json(err)});
     },
