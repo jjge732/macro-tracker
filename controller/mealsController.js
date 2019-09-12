@@ -1,5 +1,4 @@
 const db = require('../models');
-const userController = require("./usersController");
 
 module.exports = {
     getUserWithMeals: (req, res) => {

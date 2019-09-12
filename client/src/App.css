@@ -1,6 +1,20 @@
+* {
+  font-weight: bold;
+}
+
 body {
   background-color: #ACD1F2;
   display: grid;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+#container {
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto 70% auto;
+  justify-self: center;
 }
 
 header {
@@ -9,7 +23,8 @@ header {
   font-size: 25px;
   font-weight: bold;
   padding: 15px 0;
-  text-shadow: #F2358D -2px 2px;
+  text-shadow: #F2358D 2px 2px;
+  grid-row: 1;
   display: grid;
   grid-auto-columns: auto;
   justify-items: center;
@@ -17,4 +32,47 @@ header {
 
 .navBarSpan {
   grid-row: 1;
+}
+
+.mealContainer {
+  grid-column: 2;
+  min-height: 80px;
+  height: auto;
+  background-color: #41AEF2;
+  color: #F2E205;
+  box-shadow: #F26D6D 2px 2px;
+  text-shadow: #F2358D 2px 2px;
+  border-radius: 15px;
+  font-weight: bold;
+  display: grid;
+  grid-auto-columns: auto;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 28px;
+}
+
+.mealTitle {
+  text-align: center;
+  justify-self: center;
+  grid-row: 1;
+}
+
+.foodContainer {
+  font-size: 24px;
+  margin: 10px 0 5px 0;
+}
+
+.foodContainer span {
+  margin: 0 10px;
+}
+
+button {
+  border-style: none;
+  background-color: #F2E205;
+  border-radius: 5px;
+  color: #333;
+  text-shadow: #F2358D 0.5px 0.5px;
+  box-shadow: #F2358D 1.5px 1.5px;
 }
