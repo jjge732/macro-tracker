@@ -18,7 +18,7 @@ module.exports = {
     },
     updateMeal: (req, res) => {
         db.Meal
-            .updateOne({_id: req.body.MealId},
+            .findOneAndUpdate({_id: req.body.mealId},
                 {
                    $push: {
                        foods: req.body.foodId
