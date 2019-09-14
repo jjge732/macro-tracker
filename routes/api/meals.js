@@ -3,7 +3,7 @@ const mealsController = require('../../controller/mealsController');
 
 router.route('/')
     .post(mealsController.postMeal)
-    .patch(mealsController.updateMeal);
+    .patch(mealsController.addFoodToMeal);
 
 router.route('/all')
     .get(mealsController.getAllMeals);

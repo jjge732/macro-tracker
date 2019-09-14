@@ -15,7 +15,7 @@ module.exports = {
             .then(dbMeal => {res.json(dbMeal)})
             .catch(err => {res.status(422).json(err)});
     },
-    updateMeal: (req, res) => {
+    addFoodToMeal: (req, res) => {
         db.Meal
             .findOneAndUpdate({_id: req.body.mealId},
                 {

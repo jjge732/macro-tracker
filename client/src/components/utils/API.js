@@ -53,7 +53,7 @@ export default {
      * @param {string} user - A string representing the user whose foods are being requested
      * @returns {promise} - A promise representing the axios call
      */
-    getUserWithFoods: user => 
+    getFoodsForUser: user => 
         axios.get(`/api/foods/user/${user}`),
     
     /**
@@ -76,6 +76,47 @@ export default {
      * @returns {promise} - A promise representing the axios call
      */
     updateFood: (foodId, foodName, gramsCarbs, gramsFat, gramsProtein) =>
-        axios.patch("/api/foods/", foodId, foodName, gramsCarbs, gramsFat, gramsProtein)
+        axios.patch("/api/foods/", foodId, foodName, gramsCarbs, gramsFat, gramsProtein),
+
+    /**
+     * This function makes a get request to the server to get one particular meal by its id
+     * @param {string} mealId - A string representing a particular meal's id in the database
+     * @returns {promise} - A promise representing the axios call
+     */
+    getMealById: mealId => 
+        axios.get(`/api/foods/${mealId}`),
+
+    /**
+     * This function makes a get request to the server to get all meals in the database
+     * @returns {promise} - A promise representing the axios call
+     */
+    getAllMeals: () => 
+        axios.get("/api/foods/all"),
+
+    /**
+     * This function makes a get request to the server to get all the meals associated with a user
+     * @param {string} user - A string representing the user whose meals are being requested
+     * @returns {promise} - A promise representing the axios call
+     */
+    getMealsForUser: user => 
+        axios.get(`/api/foods/user/${user}`),
+
+    /**
+     * This function makes a post request to the server to create a new meal in the database
+     * @param {string} mealName - A string representing the name of the meal to be created
+     * @param {string} foodId - An integer representing the id of the food to be added to the meal
+     * @returns {promise} - A promise representing the axios call
+     */
+    createNewMeal: (mealName, foodId) => 
+        axios.post("/api/meals/", mealName, foodId),
+
+    /**
+     * This function makes a patch request to the server to add a new food to a meal in the database
+     * @param {string} mealId - A string representing the id of the meal to which the food is being added
+     * @param {string} foodId - An integer representing the id of the food to be added to the meal
+     * @returns {promise} - A promise representing the axios call
+     */
+    addFoodToMeal: (mealId, foodId) => 
+        axios.post("/api/meals/", mealId, foodId)
     
 }
